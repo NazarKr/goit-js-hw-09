@@ -3,6 +3,8 @@ const refs = {
   btnStop: document.querySelector('button[data-stop]'),
   body: document.body,
 };
+
+const PROMPT_DELAY = 500;
 let intervalId = null;
 
 refs.btnStart.addEventListener('click', startChengeColorBody);
@@ -11,7 +13,7 @@ refs.btnStop.addEventListener('click', stopChengeColorBody);
 function startChengeColorBody(e) {
   refs.btnStart.disabled = true;
   refs.btnStop.disabled = false;
-  intervalId = setInterval(setBodyColor, 500);
+  intervalId = setInterval(setBodyColor, PROMPT_DELAY);
 }
 
 function stopChengeColorBody(e) {
